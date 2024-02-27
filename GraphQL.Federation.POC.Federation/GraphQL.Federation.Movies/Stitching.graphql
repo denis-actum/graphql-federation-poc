@@ -1,0 +1,3 @@
+extend type Query {
+	movies: [Movie!]! @delegate(schema: "movies", path: "movies")
+}

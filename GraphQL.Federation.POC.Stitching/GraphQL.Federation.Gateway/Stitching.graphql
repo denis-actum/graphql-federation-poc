@@ -1,0 +1,7 @@
+extend type Query {
+	movies: [Movie!]! @delegate(schema: "movies", path: "movies")
+}
+
+extend type Movie {
+	actors: [Person!]! @delegate(schema: "persons", path: "movieActors(movieId: $fields:id).actors")
+}

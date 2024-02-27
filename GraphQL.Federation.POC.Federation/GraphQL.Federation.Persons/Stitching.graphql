@@ -1,0 +1,3 @@
+extend type Movie {
+	actors: [Person!]! @delegate(schema: "persons", path: "movieActors(movieId: $fields:id).actors")
+}
