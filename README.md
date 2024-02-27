@@ -10,3 +10,8 @@ Result of investigation proves that goal is achievable using combination of tech
 - Language: C# latest
 - Application framework: Azure Functions v4
 - GraphQL framework: HotChocolate 13.8.1
+
+Founded problems:
+- To prevent N+1 problem for loading nested data from subgraphs it requires custom implementation of data loader. Todo: it will be good to have generic one.
+- There are no easy access to HttpContext during Azure Function execution. Custom package or implementation is required.
+- If some of the logic of your federated GraphQL APIs based on HTTP Headers it is required to implement custom HttpMessageHandler and pass original http headers to the request to subgraphs.
